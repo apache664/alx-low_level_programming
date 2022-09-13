@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _isalpha - Entry point 
+ * _isalpha: Entry Point 
  * @c: the integer value it receives from other functions
  * Description: checks if character is a letter both lowercase or uppercase
  * Return: 1 if true. 0 if false
