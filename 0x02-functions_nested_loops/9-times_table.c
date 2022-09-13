@@ -1,9 +1,9 @@
 #include"main.h"
 
 /**
- * times_table - prints the 9 times table
+ * times_table - A code that prints the 9 times table
  *
- * Example Table
+ * Example Criteria
  * 0, 0, 0, 0, ..
  * 0, 1, 2, 3, ..
  *
@@ -24,8 +24,8 @@ void times_table(void)
 			prod = num * mult;
 
 			/*
-			 * put space if product is a single number
-			 * place the first digit if its two numbers
+			 * then put space if product is a single number
+			 * then place the first digit if its two numbers
 			*/
 			if (prod <= 9)
 				_putchar(' ');
