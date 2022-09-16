@@ -8,21 +8,14 @@
  * Return: Always 0 (Success)
 */
 
-void print_square(int n)
+void print_square(int size)
 {
-	int i = 0, ii;
+	int row, column;
 
-	while (i < n && n > 0)
+	for (row = 1; row <= size; ++row)
 	{
-		ii = 0;
-		while (ii < n)
-		{
+		for (column = 1; column <= size; ++column)
 			_putchar('#');
-			ii++;
-		}
 		_putchar('\n');
-		i++;
 	}
-	if (i == 0)
-		_putchar('\n');
 }
