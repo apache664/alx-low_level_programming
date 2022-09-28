@@ -3,6 +3,7 @@
 /**
  * factorial - this eturns the factorial of any given number.
  * @n: the number which we find the factorial of.
+ * Return: always 0
  */
 int factorial(int n)
 {
