@@ -46,7 +46,8 @@ void iterate_wild(char **wildstr)
  * postfix_match - this chhecks if a string matches the postfix of
  *                 another The string to be matched.
  * @postfix: The postfix.
- *
+ * @str: string to be paired
+ * Return: if postfix & str are same declare a pointer to d null
 */
 
 char *postfix_match(char *str, char *postfix)
