@@ -3,12 +3,14 @@
 #include <stdio.h>
 
 /**
- * _memset - this fills memory with a constant byte
- * @s: this inputs d pointer that represents a memory block
- * @b: the characters to fill/set
- * @n: rep the number of bytes to be filled
+ * _memset - this the fills memory with a constant byte
  *
- * Return: pointer to filled memory area
+ * @s: input pointer that represents memory block
+ *     to fill
+ * @b: characters to fill/set
+ * @n: number of bytes to be filled
+ *
+ * Return: pointer to the filled memory area
 */
 
 char *_memset(char *s, char b, unsigned int n)
@@ -24,11 +26,13 @@ char *_memset(char *s, char b, unsigned int n)
 }
 
 /**
- * _calloc - a function that allocates memory for an array using memset
- * @nmemb: the size of an array
- * @size: d size of each element to be introduced
+ * _calloc - a function that allocates memory
+ *           for an array using memset
  *
- * Return: pointer to new allocated memory
+ * @nmemb: d size of array
+ * @size: size of each element
+ *
+ * Return: a pointer to new allocated memory
 */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
@@ -47,7 +51,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 
 /**
- * multiply - initializes d array with 0 byte
+ * multiply - this initializes an array with 0 byte
+ *
  * @s1: string 1
  * @s2: string 2
  *
@@ -66,7 +71,7 @@ void multiply(char *s1, char *s2)
 	total_l = l1 + l2;
 	ptr = _calloc(sizeof(int), total_l);
 
-	/* where we store our pointer address to be freed later */
+	/* store our pointer address to free later */
 	temp = ptr;
 
 	for (l1--; l1 >= 0; l1--)
@@ -99,9 +104,9 @@ void multiply(char *s1, char *s2)
 
 
 /**
- * main - Entry point
+ * main - d entry point
  *
- * Description: a program that multiplies
+ * Description: this a program that multiplies
  *            two positive numbers
  *
  * @argc: number of arguments
