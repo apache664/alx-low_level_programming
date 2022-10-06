@@ -1,34 +1,52 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
- * string_nconcat - this concatenates two strings
- * @s1:stirng 1
- * @s2:string 2
- * @n: n bytesofstring 2
- * Return: pointer
- */
+ * string_nconcat - a function that concatenates two strings
+ *
+ * @s1: string 1
+ * @s2: string 2
+ * @n: bytes of @s2 to add to @s1 to be a new string
+ *
+ * Return: a new string followed by the first @n bytes
+ *         of string 2 @s2 or NULL
+*/
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-  char *ptr, *empt;
-  unsigned int i, k;
+	unsigned int l1, l2, i, j;
+	char *str;
 
-  empt = "";
-  if (s1 == NULL)
-    s1 = empt;
-  if (s2 == NULL)
-    s2 = empt;
-  for (i = 0; s1[i] != '\0'; i++)
-    ;
-  ptr = malloc((i + (n * sizeof(*s2) + 1) * sizeof(*ptr)));
-  if (ptr == NULL)
-    return (NULL);
-  for (i = 0; s1[i] != '\0'; i++)
-    ptr[i] = s1[i];
-  for (k = 0; s2[k] != '\0' && k < n; k++, i++)
-    ptr[i] = s2[k];
-  ptr[i] = '\0';
-  return (ptr);
+	/*treat NULL as empty string*/
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
+	l1 = l2 = 0;
+	/*length of both s1 & s2 respectively*/
+	while (s1[l1] != '\0')
+		l1++;
+	while (s2[l2] != '\0')
+		l2++;
+
+	/*set n to length of s2*/
+	if (n >= l2)
+		n = l2;
+
+	str = (char *) malloc((l1 + n + 1) * sizeof(char));
+	if (str == NULL)
+		return (NULL);
+
+	/*add s1 to str*/
+	for (i = 0; s1[i] != '\0'; i++)
+		str[i] = s1[i];
+	/*add s2 n bytes to str*/
+	for (j = 0; j < n && s2[j] != '\0'; j++)
+	{
+		str[i] = s2[j];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
